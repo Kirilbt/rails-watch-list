@@ -1,13 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);">
-    <h1>Watch list</h1>
-    <p>Create your watchlists and add comments!</p>
-    <%= link_to "Add list", new_list_path, class: "btn btn-flat" %>
+  <h1>Watch list</h1>
+  <%= link_to "Add list", new_list_path, class: "btn btn-flat" %>
 </div>
 
 <div class="container">
   <% @lists.each do |list| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.image_url %>)">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.url %>)">
       <%= link_to list.name, list_path(list) %>
     </div>
   <% end %>
 </div>
+
+<%# list.image_url %>
