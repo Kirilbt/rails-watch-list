@@ -18,7 +18,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    # @bookmarks = @list.bookmarks
+    @bookmarks = @list.bookmarks
   end
 
   # def edit
